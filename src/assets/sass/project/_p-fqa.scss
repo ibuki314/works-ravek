@@ -1,0 +1,133 @@
+@use "../global" as g;
+
+.p-fqa {
+  background: g.$accent-3;
+  padding: 60px 0 61px;
+
+  @include g.mq(xl) {
+    padding: 100px 0 101px;
+  }
+}
+
+.p-fqa__inner {
+  width: calc(920 / 1200 * 100%);
+  max-width: 920px;
+}
+
+.p-fqa__list-wrap {
+  margin-top: 40px;
+
+  @include g.mq(xl) {
+    margin-top: 58px;
+  }
+}
+
+.p-fqa__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.p-fqa__item {
+  &.is-active {
+    .p-fqa__item__accordion-wrap {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+.p-fqa__item__question {
+  width: 100%;
+  border-radius: 4px;
+  background: g.$main;
+  color: g.$white;
+
+  @include g.mq(lg) {
+    border-radius: 10px;
+  }
+}
+
+.p-fqa__item__question__container {
+  padding: 11px 10px 8px 47px;
+  position: relative;
+
+  @include g.mq(lg) {
+    padding: 17px 25px 16px 57px;
+  }
+}
+
+.p-fqa__item__question__heading {
+  position: absolute;
+  top: 11px;
+  left: 15px;
+  font-size: 22px;
+  font-weight: 700;
+
+  @include g.mq(lg) {
+    top: 20px;
+    left: 24px;
+  }
+}
+
+.p-fqa__item__question__content {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+  }
+}
+
+.p-fqa__item__accordion-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows g.$duration g.$timing;
+}
+
+.p-fqa__item__accordion {
+  overflow: hidden;
+}
+
+.p-fqa__item__answer {
+  background: g.$white;
+  border-radius: 4px;
+  margin-top: 16px;
+
+  @include g.mq(lg) {
+    border-radius: 10px;
+    margin-top: 14px;
+  }
+}
+
+.p-fqa__item__answer__container {
+  position: relative;
+  padding: 12px 15px 12px 41px;
+
+  @include g.mq(lg) {
+    padding: 21px 25px 22px 56px;
+  }
+}
+
+.p-fqa__item__answer__heading {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  font-size: 22px;
+  font-weight: 700;
+
+  @include g.mq(lg) {
+    top: 23px;
+    left: 25px;
+  }
+}
+
+.p-fqa__item__answer__content {
+  font-size: 16px;
+  line-height: 1.6;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}

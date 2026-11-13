@@ -1,0 +1,203 @@
+@use "../global" as g;
+
+.p-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: g.$white;
+  height: 52px;
+  z-index: map-get(g.$z-index, header);
+
+  @include g.mq(lg) {
+    height: 72px;
+  }
+}
+
+.p-header__inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+
+  @include g.mq(md) {
+    width: calc(728 / 768 * 100%);
+  }
+
+  @include g.mq(lg) {
+    width: calc(1200 / 1440 * 100%);
+  }
+}
+
+.p-header__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-header__logo {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  align-items: center;
+  height: 100%;
+  color: g.$main;
+  font-family: g.$ff-accent;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+
+  @include g.mq(md) {
+    padding: 0;
+  }
+
+  @include g.mq(lg) {
+    font-size: 28px;
+    letter-spacing: 1.4px;
+  }
+}
+
+.p-header__contents {
+  display: none;
+
+  @include g.mq(md) {
+    display: flex;
+    height: 100%;
+    gap: 6px;
+  }
+}
+
+.p-header__nav {
+  height: 100%;
+  display: flex;
+}
+
+.p-header__nav__link {
+  height: 100%;
+  display: grid;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    border-radius: calc(infinity * 1px);
+    background: g.$main;
+
+    @include g.hover-transition {
+      transition: width g.$duration g.$timing;
+    }
+  }
+
+  @include g.hover-active {
+    &::before {
+      width: 48%;
+    }
+  }
+}
+
+.p-header__btn-wrap {
+  display: grid;
+  align-items: center;
+}
+
+.p-header__btn {
+  background: g.$main;
+  color: g.$white;
+  width: 180px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: calc(infinity * 1px);
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid g.$main;
+
+  @include g.hover-transition {
+    transition: background-color g.$duration g.$timing,
+      color g.$duration g.$timing;
+  }
+
+  @include g.hover-active {
+    background: g.$white;
+    color: g.$main;
+  }
+}
+
+.p-header__drawer-button {
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  width: 61px;
+  height: 100%;
+
+  @include g.mq(md) {
+    display: none;
+  }
+
+  &::before,
+  .p-header__drawer-button__bar,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 3px;
+    background: g.$main;
+    border-radius: calc(infinity * 1px);
+  }
+
+  .p-header__drawer-button__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: g.$main;
+    font-size: 6px;
+    font-weight: 700;
+    letter-spacing: 0.12px;
+    transform: translate(-50%, calc(-50% - 13px));
+  }
+
+  &::before {
+    content: "";
+    width: 21px;
+    transform: translate(-50%, calc(-50% - 3px));
+  }
+
+  .p-header__drawer-button__bar {
+    width: 13.125px;
+    transform: translate(calc(-50% + 4px), calc(-50% + 7px));
+  }
+
+  &::after {
+    content: "";
+    width: 21px;
+    transform: translate(-50%, calc(-50% + 15px));
+  }
+
+  &.is-active {
+    .p-header__drawer-button__text {
+      display: none;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .p-header__drawer-button__bar {
+      display: none;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

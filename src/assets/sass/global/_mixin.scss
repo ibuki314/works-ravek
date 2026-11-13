@@ -1,0 +1,45 @@
+@use "./variables" as g;
+
+// Media Query
+@mixin mq($breakpoint: 0) {
+  @media #{map-get(g.$breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// Hover Effect
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin active {
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+@mixin hover-transition {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin hover-active {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}

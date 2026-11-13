@@ -1,0 +1,34 @@
+@use "../global" as g;
+
+.c-heading {
+  text-align: center;
+  color: g.$accent-1;
+  font-family: g.$ff-en;
+  font-size: 22px;
+  font-weight: 700;
+
+  @include g.mq(xl) {
+    font-size: 33px;
+  }
+}
+
+.c-subheading-wrap {
+  margin-top: 12px;
+
+  @include g.mq(xl) {
+    margin-top: 22px;
+  }
+}
+
+.c-subheading {
+  text-align: center;
+  color: g.$main;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
+  @include g.mq(xl) {
+    font-size: 48px;
+    letter-spacing: 2.4px;
+  }
+}

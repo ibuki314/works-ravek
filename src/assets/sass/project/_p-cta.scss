@@ -1,0 +1,35 @@
+@use "../global" as g;
+
+.p-cta {
+  background: g.$black;
+  padding: 40px 0;
+
+  @include g.mq(xl) {
+    padding: 61px 0;
+  }
+}
+
+.p-cta__heading {
+  color: g.$white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.36px;
+
+  @include g.mq(xl) {
+    line-height: 1.45;
+    font-size: 36px;
+    letter-spacing: 0.72px;
+  }
+}
+
+.p-cta__btn-wrap {
+  display: grid;
+  place-items: center;
+  margin-top: 24px;
+
+  @include g.mq(xl) {
+    margin-top: 30px;
+  }
+}

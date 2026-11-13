@@ -1,0 +1,35 @@
+@use "../global" as g;
+
+.c-btn {
+  display: grid;
+  place-items: center;
+  border-radius: calc(infinity * 1px);
+  font-weight: 700;
+  background: g.$main;
+  color: g.$white;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.24);
+  width: 300px;
+  height: 58px;
+  font-size: 18px;
+  border: 2px solid g.$main;
+
+  @include g.hover-transition {
+    transition: transform g.$duration g.$timing;
+  }
+
+  @include g.mq(xl) {
+    width: 400px;
+    height: 70px;
+    font-size: 24px;
+    letter-spacing: 0.48px;
+  }
+
+  @include g.hover {
+    transform: translateY(-8px);
+  }
+
+  @include g.active {
+    background: g.$white;
+    color: g.$main;
+  }
+}

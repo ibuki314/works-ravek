@@ -1,0 +1,26 @@
+@use "../global" as g;
+
+body {
+  color: g.$black;
+  font-family: g.$ff-jp;
+  font-weight: g.$fw-base;
+  line-height: g.$lh-base;
+  font-style: normal;
+  background: g.$white;
+
+  &.is-no-scroll {
+    overflow: hidden;
+  }
+}
+
+svg,
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}

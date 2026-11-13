@@ -1,0 +1,38 @@
+@use "../global" as g;
+
+.p-users {
+  padding: 60px 0 60px;
+
+  @include g.mq(xl) {
+    padding: 98px 0 100px;
+  }
+}
+
+.p-users__inner {
+  width: calc(335 / 375 * 100%);
+  max-width: 972px;
+
+  @include g.mq(md) {
+    width: calc(972 / 1280 * 100%);
+  }
+}
+
+.p-users__cards-wrap {
+  margin-top: 24px;
+
+  @include g.mq(xl) {
+    margin-top: 40px;
+  }
+}
+
+.p-users__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 13px;
+  column-gap: 12px;
+
+  @include g.mq(xl) {
+    row-gap: 50px;
+    column-gap: 40px;
+  }
+}

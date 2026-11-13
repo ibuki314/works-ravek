@@ -1,0 +1,164 @@
+@use "../global" as g;
+
+.p-fv {
+  background: g.$accent-2;
+  padding: 60px 0;
+
+  @include g.mq(lg) {
+    padding: 32px 0;
+  }
+}
+
+.p-fv__inner {
+  width: calc(1200 / 1440 * 100%);
+  max-width: 480px;
+
+  @include g.mq(lg) {
+    max-width: 1200px;
+    position: relative;
+    padding: 86px 0 81px;
+    aspect-ratio: 1200/515;
+    z-index: 1;
+  }
+}
+
+.p-fv__heading {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.6;
+
+  @media not screen and (min-width: 368px) {
+    font-size: 29.4px;
+  }
+
+  @include g.mq(xl) {
+    font-size: 60px;
+    line-height: 1.45;
+  }
+}
+
+.p-fv__subheading-wrap {
+  margin-top: 16px;
+
+  @include g.mq(xl) {
+    margin-top: 23px;
+  }
+}
+
+.p-fv__subheading {
+  font-size: 16px;
+  line-height: 1.6;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
+
+.p-fv__subheading__br {
+  display: none;
+
+  @include g.mq(lg) {
+    display: block;
+  }
+}
+
+.p-fv__img-wrap {
+  margin-top: -25px;
+  display: grid;
+  place-items: center;
+
+  @include g.mq(sm) {
+    margin-top: -40px;
+  }
+
+  @include g.mq(lg) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(515 / 1200 * 100%);
+    height: 100%;
+    margin: 0;
+    z-index: -1;
+  }
+}
+
+.p-fv__img {
+  width: calc(305 / 335 * 100%);
+
+  @include g.mq(lg) {
+    width: 100%;
+  }
+}
+
+.p-fv__buttons-wrap {
+  text-align: center;
+  margin-top: -14px;
+
+  @include g.mq(sm) {
+    margin-top: -30px;
+  }
+
+  @include g.mq(lg) {
+    text-align: left;
+    margin-top: 33px;
+  }
+}
+
+.p-fv__buttons {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include g.mq(lg) {
+    flex-direction: row;
+    gap: 37px;
+  }
+}
+
+.p-fv__btn--type-1,
+.p-fv__btn--type-2 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 58px;
+  border-radius: calc(infinity * 1px);
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.24);
+  border: 2px solid g.$main;
+
+  @include g.hover-transition {
+    transition: transform g.$duration g.$timing;
+  }
+
+  @include g.hover {
+    transform: translateY(-8px);
+  }
+
+  @include g.mq(lg) {
+    width: 250px;
+    height: 54px;
+  }
+}
+
+.p-fv__btn--type-1 {
+  background: g.$main;
+  color: g.$white;
+
+  @include g.active {
+    background: g.$white;
+    color: g.$main;
+  }
+}
+
+.p-fv__btn--type-2 {
+  background: g.$white;
+  color: g.$main;
+
+  @include g.active {
+    background: g.$main;
+    color: g.$white;
+  }
+}

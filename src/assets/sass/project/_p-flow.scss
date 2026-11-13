@@ -1,0 +1,123 @@
+@use "../global" as g;
+
+.p-flow {
+  padding: 60px 0;
+  background: g.$accent-3;
+
+  @include g.mq(xl) {
+    padding: 100px 0 81px;
+  }
+}
+
+.p-flow__inner {
+  width: calc(1070 / 1280 * 100%);
+  max-width: 480px;
+
+  @include g.mq(lg) {
+    max-width: 1070px;
+  }
+}
+
+.p-flow__cards-wrap {
+  margin-top: 40px;
+
+  @include g.mq(xl) {
+    margin-top: 37px;
+  }
+}
+
+.p-flow__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 68px;
+
+  @include g.mq(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(115 / 1070 * 100%);
+  }
+
+  @include g.mq(lg) {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 79px;
+      content: "";
+      width: 22px;
+      height: 56px;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      background: #c4c4c4;
+    }
+
+    &::before {
+      left: calc(331 / 1070 * 100%);
+    }
+
+    &::after {
+      right: calc(320 / 1070 * 100%);
+    }
+  }
+}
+
+.p-flow__card {
+  position: relative;
+  padding-top: 24px;
+
+  @include g.mq(lg) {
+    padding-top: 18px;
+  }
+}
+
+.p-flow__card__number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: g.$main;
+  font-family: g.$ff-en;
+  font-size: 48px;
+  font-weight: 700;
+
+  @include g.mq(lg) {
+    left: -10px;
+    font-size: 43px;
+  }
+}
+
+.p-flow__card__img {
+  height: 191px;
+  border-radius: 30px;
+  background: g.$accent-2;
+  object-fit: contain;
+}
+
+.p-flow__card__heading-wrap {
+  margin-top: 17px;
+
+  @include g.mq(xl) {
+    margin-top: 21px;
+  }
+}
+
+.p-flow__card__heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+
+  @include g.mq(xl) {
+    font-size: 24px;
+  }
+}
+
+.p-flow__card__body-wrap {
+  margin-top: 7px;
+
+  @include g.mq(xl) {
+    margin-top: 13px;
+  }
+}
+
+.p-flow__card__body {
+  font-size: 16px;
+  line-height: 1.8;
+}

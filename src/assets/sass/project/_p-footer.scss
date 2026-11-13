@@ -1,0 +1,138 @@
+@use "../global" as g;
+
+.p-footer {
+  background: g.$accent-4;
+  color: g.$white;
+  padding: 37px 0 40px;
+  text-align: center;
+
+  @include g.mq(md) {
+    padding: 27px 0;
+    text-align: left;
+  }
+}
+
+.p-footer__inner {
+  width: calc(1200 / 1440 * 100%);
+}
+
+.p-footer__container {
+  @include g.mq(md) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.p-footer__sns__heading {
+  font-family: g.$ff-en;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.p-footer__sns-wrap {
+  margin-top: 11px;
+}
+
+.p-footer__sns__container {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-shrink: 0;
+
+  @include g.mq(md) {
+    justify-content: start;
+  }
+}
+
+.p-footer__sns-icon {
+  width: 24px;
+}
+
+.p-footer__logo-wrap {
+  margin-top: 32px;
+
+  @include g.mq(md) {
+    margin-top: 0;
+  }
+}
+
+.p-footer__logo {
+  font-family: g.$ff-accent;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.72px;
+}
+
+.p-footer__nav-wrap {
+  margin-top: 14px;
+
+  @include g.mq(md) {
+    margin-top: 19px;
+  }
+}
+
+.p-footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include g.mq(md) {
+    flex-direction: row;
+  }
+}
+
+.footer__nav__link {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    border-radius: calc(infinity * 1px);
+    background: g.$white;
+
+    @include g.hover-transition {
+      transition: width g.$duration g.$timing;
+    }
+  }
+
+  @include g.hover-active {
+    &::before {
+      width: 48%;
+    }
+  }
+}
+
+.p-footer__copyright-wrap {
+  margin-top: 28px;
+
+  @include g.mq(md) {
+    margin-top: 19px;
+  }
+}
+
+.p-footer__copyright__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include g.mq(md) {
+    flex-direction: row;
+    gap: 14px;
+  }
+}
+
+.p-footer__copyright {
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}

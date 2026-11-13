@@ -1,0 +1,48 @@
+// Color
+$black: #2d2d32;
+$white: #fff;
+$main: #64629d;
+$accent-1: #9f9ec1;
+$accent-2: #edecfc;
+$accent-3: #f9f9f9;
+$accent-4: #000;
+
+// Font
+$ff-jp: "Noto Sans JP", sans-serif;
+$ff-en: Futura, sans-serif;
+$ff-accent: "Lato", sans-serif;
+$fw-base: 400;
+$lh-base: 1;
+
+// transition
+$duration: 220ms;
+$timing: ease;
+
+$breakpoints: (
+  sp: "not screen and (min-width: 576px)",
+  sm: "screen and (min-width:  576px)",
+  md: "screen and (min-width:  768px)",
+  lg: "screen and (min-width:  992px)",
+  xl: "screen and (min-width: 1200px)",
+  xxl: "screen and (min-width: 1400px)",
+) !default;
+
+// $z-index: (
+//   loading: calc(infinity),
+//   modal: calc(infinity - 1),
+//   header: calc(infinity - 2),
+//   drawer: calc(infinity - 3),
+//   floating: calc(infinity - 4),
+//   page-top: calc(infinity - 5),
+//   footer: calc(infinity - 6),
+// ) !default;
+
+$z-index: (
+  loading: calc(100),
+  modal: calc(100 - 1),
+  header: calc(100 - 2),
+  drawer: calc(100 - 3),
+  floating: calc(100 - 4),
+  page-top: calc(100 - 5),
+  footer: calc(100 - 6),
+) !default;

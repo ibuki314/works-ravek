@@ -1,0 +1,65 @@
+@use "../global" as g;
+
+.p-about {
+  padding: 80px 0 60px;
+  text-align: center;
+
+  @include g.mq(xl) {
+    padding: 100px 0;
+  }
+}
+
+.p-about__inner {
+  width: calc(335 / 375 * 100%);
+}
+
+.p-about__subheading {
+  line-height: 1.4;
+
+  @include g.mq(xl) {
+    line-height: 1;
+  }
+}
+
+.p-about__body-wrap {
+  margin-top: 24px;
+
+  @include g.mq(xl) {
+    margin-top: 28px;
+  }
+}
+
+.p-about__body {
+}
+
+.p-about__body__text {
+  font-size: 16px;
+  line-height: 1.6;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  &:not(:first-child) {
+    margin-top: 25.6px;
+
+    @include g.mq(xl) {
+      margin-top: 32.4px;
+    }
+  }
+}
+
+.p-about__body__text--bolt {
+  font-weight: 700;
+}
+
+.p-about__btn-wrap {
+  margin-top: 24px;
+  display: grid;
+  place-items: center;
+
+  @include g.mq(xl) {
+    margin-top: 40px;
+  }
+}

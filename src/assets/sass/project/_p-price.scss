@@ -1,0 +1,302 @@
+@use "../global" as g;
+
+.p-price {
+  padding: 60px 0;
+
+  @include g.mq(xl) {
+    padding: 100px 0;
+  }
+}
+
+.p-price__table-wrap {
+  margin-top: 40px;
+  overflow-x: scroll;
+
+  @include g.mq(xl) {
+    margin-top: 68px;
+  }
+}
+
+.p-price__table {
+  margin-left: 20px;
+  width: 727px;
+
+  @include g.mq(md) {
+    margin: 0 auto;
+  }
+
+  @include g.mq(lg) {
+    width: calc(1020 / 1400 * 100%);
+    max-width: 1020px;
+  }
+}
+
+.p-price__table__thead {
+  .p-price__table__tr {
+    height: 232px;
+
+    @include g.mq(xl) {
+      height: 286px;
+    }
+  }
+
+  .p-price__table__th {
+    text-align: center;
+    width: 180px;
+
+    @include g.mq(lg) {
+      width: calc(260 / 1020 * 100%);
+    }
+
+    &:first-child {
+      width: 151px;
+
+      @include g.mq(lg) {
+        width: calc(241 / 1020 * 100%);
+      }
+    }
+
+    &:nth-child(3) {
+      width: 216px;
+
+      @include g.mq(lg) {
+        width: calc(260 / 1020 * 100%);
+      }
+    }
+  }
+}
+
+.p-price__table__head__container {
+  height: 200px;
+  margin-top: 32px;
+  padding-top: 33px;
+  background: g.$black;
+  font-weight: 700;
+  color: g.$white;
+
+  @include g.mq(xl) {
+    margin-top: 16px;
+    padding-top: 53px;
+    height: 270px;
+  }
+
+  &--highlight {
+    color: g.$white;
+    font-weight: 700;
+    height: 232px;
+    padding-top: 59px;
+    background: g.$main;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.6);
+
+    @include g.mq(xl) {
+      padding-top: 64px;
+      height: 286px;
+    }
+  }
+}
+
+.p-price__table__head__heading {
+  font-size: 20px;
+
+  @include g.mq(xl) {
+    font-size: 24px;
+  }
+
+  &--highlight {
+    font-size: 24px;
+
+    @include g.mq(xl) {
+      font-size: 28px;
+    }
+  }
+}
+
+.p-price__table__head__price-wrap {
+  margin-top: 22px;
+
+  @include g.mq(xl) {
+    margin-top: 29px;
+  }
+
+  &--highlight {
+    margin-top: 18px;
+
+    @include g.mq(xl) {
+      margin-top: 24px;
+    }
+  }
+}
+
+.p-price__table__head__price {
+  font-size: 14px;
+
+  @include g.mq(xl) {
+    font-size: 20px;
+  }
+
+  &--highlight {
+    font-size: 20px;
+
+    @include g.mq(xl) {
+      font-size: 26px;
+    }
+  }
+}
+
+.p-price__table__head__price--bolt {
+  font-size: 30px;
+
+  @include g.mq(xl) {
+    font-size: 36px;
+  }
+
+  &--highlight {
+    font-size: 36px;
+
+    @include g.mq(xl) {
+      font-size: 42px;
+    }
+  }
+}
+
+.p-price__table__head__price--small {
+  @include g.mq(xl) {
+    font-size: 18px;
+  }
+
+  &--highlight {
+    @include g.mq(xl) {
+      font-size: 24px;
+    }
+  }
+}
+
+.p-price__table__head__btn-wrap {
+  margin-top: 25px;
+  display: grid;
+  place-items: center;
+
+  @include g.mq(xl) {
+    margin-top: 36px;
+  }
+}
+
+.p-price__table__tbody {
+  .p-price__table__tr {
+    height: 42px;
+
+    @include g.mq(xl) {
+      height: 60px;
+    }
+
+    &:nth-child(odd) {
+      background: g.$accent-2;
+    }
+  }
+
+  .p-price__table__th {
+    padding-left: 18px;
+    vertical-align: middle;
+    font-size: 15px;
+
+    @include g.mq(xl) {
+      padding-left: 32px;
+      font-size: 18px;
+    }
+  }
+
+  .p-price__table__td {
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    vertical-align: middle;
+
+    &:nth-child(3) {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+}
+
+.p-price__table__tfoot {
+  .p-price__table__tr {
+    height: 60px;
+
+    @include g.mq(xl) {
+      height: 81px;
+    }
+  }
+
+  .p-price__table__th {
+  }
+
+  .p-price__table__td {
+    vertical-align: middle;
+  }
+}
+
+.p-price__table__foot__btn-wrap {
+  display: grid;
+  place-items: center;
+}
+
+.p-price__table__btn--type-1,
+.p-price__table__btn--type-2,
+.p-price__table__btn--type-3 {
+  width: 166px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: calc(infinity * 1px);
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid;
+
+  @include g.hover-transition {
+    transition: border-color g.$duration g.$timing,
+      background-color g.$duration g.$timing, color g.$duration g.$timing;
+  }
+
+  @include g.mq(xl) {
+    width: 234px;
+    width: calc(234 / 260 * 100%);
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+.p-price__table__btn--type-1 {
+  border-color: g.$black;
+  background: g.$white;
+  color: g.$black;
+
+  @include g.hover-active {
+    border-color: g.$white;
+    background: g.$black;
+    color: g.$white;
+  }
+}
+
+.p-price__table__btn--type-2 {
+  border-color: g.$white;
+  background: g.$main;
+  color: g.$white;
+
+  @include g.hover-active {
+    border-color: g.$main;
+    background: g.$white;
+    color: g.$main;
+  }
+}
+
+.p-price__table__btn--type-3 {
+  border-color: g.$main;
+  background: g.$main;
+  color: g.$white;
+
+  @include g.hover-active {
+    background: g.$white;
+    color: g.$main;
+  }
+}

@@ -1,0 +1,10 @@
+@use "../global" as g;
+
+.l-inner {
+  margin: 0 auto;
+  max-width: 1200px;
+
+  @include g.mq(sp) {
+    width: calc(335 / 375 * 100%);
+  }
+}
